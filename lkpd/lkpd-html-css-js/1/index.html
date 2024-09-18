@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Keterangan</th>
+                <th>Bersedia Daftar Ulang</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.</td>
+                <td>Bersedia membayar <b>Dana Sumbangan Pembangunan (DSP)</b><br>Sebesar <b>Rp 8.500.000</b> dengan
+                    mekanisme pembayaran Dana Sumbangan Pembangunan Pendidikan
+                </td>
+                <td>
+                    <input type="radio" name="pilih" value="opsi1" id="ke1" name="ke1" value="ke1">
+                    <label for="ke1">Lunak saat Daftar Ulang</label>
+                    <br>
+                    <input type="radio" name="pilih" value="opsi2" id="ke2" name="ke2" value="ke2">
+                    <label for="ke2">60% dibayarkan saat daftar ulang, dan sisanya dibayarkan paling lambat tanggal
+                        1
+                        Juli 2024</label>
+                </td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Bersedia membayar <b>Sumbangan Pengelenggara Pendidikan (SPP)</b><br>Secara rutin setiap bulan
+                    sebesar
+                    <b>Rp 550.000</b> yang dibayarkan sebelum tanggal 10 setiap bulannya kecuali bulan Juli 2024
+                </td>
+                <td>
+                    <input type="checkbox" id="spp" name="spp" value="spp">
+                </td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>
+                    <b>Pembayaran lainnya:</b>
+                    <br>
+                    Setelah Putra/Putri kami diterima di SMK Wikrama Bogor, kami juga bersedia
+                    <br><br>
+                    a. wakaf
+                </td>
+                <td>
+                    <input type="radio" name="pilihan" value="opsi1">
+                    <label> Rp. 300.000</label> <br>
+                    <input type="radio" name="pilihan" value="opsi2">
+                    <label> Rp. 500.000</label> <br>
+                    <input type="radio" name="pilihan" value="opsi3">
+                    <label> Rp. 1.000.000</label> <br>
+                    <input type="radio" name="pilihan" value="opsi14">
+                    <label> Rp. 2.000.000</label> <br>
+                    <input type="radio" name="pilihan" value="opsi5">
+                    <label> Rp. 5.000.000</label> <br>
+                    <input type="radio" name="pilihan" value="opsi6">
+                    <label> > Rp. 5.000.000 atau Rp <input type="number" min="5000000"></label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    b. <b>Zakat Infaq Sodakoh</b> secara rutin setiap bulan
+                </td>
+                <td><input type="number" placeholder="Rp 20.000"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

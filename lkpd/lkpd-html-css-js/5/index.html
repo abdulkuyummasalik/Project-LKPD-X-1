@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Mundur Alert</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button onclick="tampilkanAlert()">Munculkan Alert</button>
+
+    <div id="container">
+        <div class="modal-content">
+            <p id="countdownText">Hitung mundur akan muncul di sini</p>
+        </div>
+    </div>
+
+    <script>
+        function tampilkanAlert() {
+            let angkaAwal = 5;
+            let box = document.getElementById("container");
+            let tampilText = document.getElementById("countdownText");
+
+            box.style.display = "block";
+
+            const perbaruiAngka = () => {
+                tampilText.innerHTML = `<b>Danger!</b> Alert akan tertutup dalam: ${angkaAwal} detik`;
+            };
+
+            perbaruiAngka();
+
+            let interval = setInterval(function () {
+                angkaAwal--;
+                perbaruiAngka();
+                if (angkaAwal <= 0) {
+                    clearInterval(interval);
+                    box.style.display = "none";
+                }
+            }, 1000);
+
+        }
+
+    </script>
+</body>
+
+</html>

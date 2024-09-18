@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Mundur</title>
+    <style>
+        #countdownAlert {
+            display: none;
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        body {
+            background-color: grey;
+        }
+
+        button {
+            background-color: red;
+            border-radius: 80px;
+            color: white;
+            margin-left: 710px;
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showCountdown()">Hitung Mundur</button>
+
+    <div id="countdownAlert"></div>
+
+    <script>
+        function showCountdown() {
+            let count = 5;
+            const alertBox = document.getElementById('countdownAlert');
+            alertBox.style.display = 'block';
+            alertBox.innerText = `Menghitung mundur: ${count}`;
+
+            const countdown = setInterval(function() {
+                count--;
+                if (count >= 1) {
+                    alertBox.innerText = `Menghitung mundur: ${count}`;
+                } else {
+                    clearInterval(countdown);
+                    alertBox.style.display = 'none';
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

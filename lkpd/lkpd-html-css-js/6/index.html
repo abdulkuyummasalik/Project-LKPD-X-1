@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <input type="submit" value="Submit">
+  </form>
+  <h2 id="searchStatus">Tidak mencari data</h2>
+
+  <script>
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+    const searchStatus = document.getElementById('searchStatus');
+
+    searchForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const searchTerm = searchInput.value.trim();
+
+      if (searchTerm) {
+        const searchTermSpan = document.createElement('span');
+        searchTermSpan.textContent = searchTerm;
+
+        searchStatus.textContent = "Mencari data ";
+        searchStatus.appendChild(searchTermSpan);
+        searchStatus.appendChild(document.createTextNode(" ..."));
+      } else {
+        searchStatus.textContent = "Tidak mencari data";
+      }
+      // buatlah input untuk mencari data berikut: satu, dua, tiga,empat, lima. Jika ada maka tampilkan pesan ada jika tidak ada maka tampilkan pesan tidak ada
+    });
+  </script>
+</body>
+
+</html>

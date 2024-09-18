@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambar dengan Filter Opacity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Ubah Gambar dan Filter Opacity</h1>
+
+    <form>
+        <label for="gambar">Pilih Gambar:</label>
+        <input type="radio" name="gambar"
+            value="https://cdn.rri.co.id/berita/Sintang/o/1713620100055-blue-sky-white-clouds/k8jr4x6yh1bjbhc.jpeg"
+            checked> Gambar 1
+        <input type="radio" name="gambar"
+            value="https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2018/11/06/4089587690.jpg"> Gambar 2
+        <input type="radio" name="gambar"
+            value="https://asset-a.grid.id/crop/0x0:0x0/x/photo/2022/05/23/landscape_meadow_field_mountains-20220523091612.jpg"> Gambar 3
+        <br><br>
+
+        <label for="opacity">Pilih Opacity:</label>
+        <input type="radio" name="opacity" value="1" checked> 1 (Tidak Transparan)
+        <input type="radio" name="opacity" value="0.5"> 0.5 (Setengah Transparan)
+        <input type="radio" name="opacity" value="0.2"> 0.2 (Sangat Transparan)
+        <br><br>
+
+        <button type="button" onclick="ubahGambar()">Ubah Gambar</button>
+    </form>
+
+    <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+        <div>
+            <h3>Gambar Asli</h3>
+            <img id="original"
+                src="https://cdn.rri.co.id/berita/Sintang/o/1713620100055-blue-sky-white-clouds/k8jr4x6yh1bjbhc.jpeg"
+                width="400px" />
+        </div>
+
+        <div>
+            <h3>Gambar dengan Opacity</h3>
+            <img id="preview"
+                src="https://cdn.rri.co.id/berita/Sintang/o/1713620100055-blue-sky-white-clouds/k8jr4x6yh1bjbhc.jpeg"
+                width="400px" style="opacity: 1;" />
+        </div>
+    </div>
+
+    <script>
+        function ubahGambar() {
+            const gambar = document.querySelector('input[name="gambar"]:checked').value;
+            const opacity = document.querySelector('input[name="opacity"]:checked').value;
+            const original = document.getElementById('original');
+            const preview = document.getElementById('preview');
+
+            original.src = gambar;
+            preview.src = gambar;
+
+            preview.style.opacity = opacity; 
+        }
+    </script>
+</body>
+
+</html>
